@@ -43,20 +43,22 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             
-            <h1 class="title is-2 publication-title">NeuroSPS: A Sensorimotor-Inspired Policy for Semantic, Proprioceptive, and Smooth Robotic Manipulation</h1>
+            <h1 class="title is-2 publication-title">
+              <span style="color: #2563eb;">NeuroSPS:</span> A Sensorimotor-Inspired Policy for <span style="color: #2563eb;">Semantic</span>, <span style="color: #2563eb;">Proprioceptive</span>, and <span style="color: #2563eb;">Smooth</span> Robotic Manipulation
+            </h1>
             
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Hanyu Liu<sup>1*</sup>,</span>
-              <span class="author-block">Qian Li<sup>1*</sup>,</span>
-              <span class="author-block">Jiaxin Huang<sup>1</sup>,</span>
-              <span class="author-block">Xinyi Wang<sup>1</sup>,</span>
-              <span class="author-block">Tao Jian<sup>1</sup>,</span>
-              <span class="author-block">Zhigong Song<sup>1†</sup></span>
+              <span class="author-block">Hanyu Liu<sup>1, 2*</sup>,</span>
+              <span class="author-block">Qian Li<sup>1, 2*</sup>,</span>
+              <span class="author-block">Jiaxin Huang<sup>1, 2</sup>,</span>
+              <span class="author-block">Xinyi Wang<sup>1, 2</sup>,</span>
+              <span class="author-block">Tao Jian<sup>1, 2</sup>,</span>
+              <span class="author-block">Zhigong Song<sup>1, 2†</sup></span>
             </div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Jiangnan University, Laboratory of Cross Mechanics and Intelligent Systems</span>
-              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution, <sup>†</sup>Corresponding Author</small></span>
+            <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+              <span class="author-block"><sup>1</sup> Jiangnan University &nbsp;&nbsp;&nbsp; <sup>2</sup> Laboratory of Cross Mechanics and Intelligent Systems</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution, &nbsp;<sup>†</sup>Corresponding Author</small></span>
             </div>
 
             <div class="column has-text-centered">
@@ -106,17 +108,21 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              To address data redundancy, fine manipulation errors, poor disturbance rejection, and execution jitter in Vision-Language-Action (VLA) models and end-to-end imitation learning for long-horizon tasks, this paper proposes NeuroSPS, a neuro-inspired manipulation framework integrating human sensorimotor mechanisms. It introduces three core algorithmic and control innovations:
+              To address data redundancy, fine manipulation errors, poor disturbance rejection, and execution jitter in Vision-Language-Action (VLA) models and end-to-end imitation learning for long-horizon tasks, this paper proposes <strong>NeuroSPS</strong>, a neuro-inspired manipulation framework integrating human sensorimotor mechanisms. It introduces three core algorithmic and control innovations:
             </p>
-            <p>
-              First, the Semantic Window Refiner (SWR) algorithm combines a sliding window with operational semantics detection to reduce trajectory preprocessing complexity from $O(n^2)$ to $O(kn)$. It achieves high-fidelity extraction of intent-critical frames and accelerates data processing by ~100x, effectively overcoming the bottleneck of massive demonstration data.
-            </p>
-            <p>
-              Second, the Real-Time Dual-Path Proprioceptive Correction Network (RT-DPC Net) overcomes the perception limitations of visual feedforward policies. Path I pre-fuses joint states with high-precision end-effector IMU data at the encoder to enhance multimodal state estimation. Path II introduces a time-step-based dynamic weighting injection at the decoder, enabling real-time closed-loop micro-correction during complex physical contacts and boosting fine manipulation success rates by up to 18%.
-            </p>
-            <p>
-              Finally, a training-inference synergistic S2F mechanism is designed. By introducing a temporal smooth loss during training and an adaptive filter based on action change rates during inference, it effectively mitigates execution jitter, yielding an additional success rate increase of up to 10% for fine tasks.
-            </p>
+            
+            <ul>
+              <li>
+                <strong>First</strong>, the <strong>Semantic Window Refiner (SWR)</strong> algorithm combines a sliding window with operational semantics detection to reduce trajectory preprocessing complexity from <i>O</i>(<i>n</i><sup>2</sup>) to <i>O</i>(<i>kn</i>). It achieves high-fidelity extraction of intent-critical frames and accelerates data processing by ~100x, effectively overcoming the bottleneck of massive demonstration data.
+              </li>
+              <li>
+                <strong>Second</strong>, the <strong>Real-Time Dual-Path Proprioceptive Correction Network (RT-DPC Net)</strong> overcomes the perception limitations of visual feedforward policies. Path I pre-fuses joint states with high-precision end-effector IMU data at the encoder to enhance multimodal state estimation. Path II introduces a time-step-based dynamic weighting injection at the decoder, enabling real-time closed-loop micro-correction during complex physical contacts and boosting fine manipulation success rates by up to 18%.
+              </li>
+              <li>
+                <strong>Finally</strong>, a training-inference synergistic <strong>Smooth-to-Fast (S2F)</strong> mechanism is designed. By introducing a temporal smooth loss during training and an adaptive filter based on action change rates during inference, it effectively mitigates execution jitter, yielding an additional success rate increase of up to 10% for fine tasks.
+              </li>
+            </ul>
+
             <p>
               Evaluated across 10 complex simulated and real-world manipulation tasks, NeuroSPS outperforms current mainstream strategies with an average success rate of 74.6%. Compared to the ACT baseline, it improves task success rates by an average of 21% (up to 35%), thoroughly validating its high generalization capability and execution robustness in unstructured environments.
             </p>
@@ -125,7 +131,6 @@
       </div>
     </div>
   </section>
-
   <section class="section">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 has-text-centered">Sim-video</h2>
